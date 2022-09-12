@@ -6,6 +6,8 @@ import { v4 } from "uuid";
 import ImageGallery from "../ImageGallery/ImageGallery";
 import addImages from "../../firebase/addImages";
 import useFireStore from "../../firebase/useFireStore";
+import { motion } from "framer-motion";
+import ImageModal from "../ImageModal/ImageModal";
 
 const HomeScreen = () => {
   const [file, setFile] = useState(null);
@@ -75,7 +77,12 @@ const HomeScreen = () => {
 
   return (
     <>
-      <div className="w-[80%] mx-auto py-[6rem] font-poppins">
+      <motion.div
+        initial={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+        animate={{ opacity: 1 }}
+        className="w-[80%] mx-auto py-[6rem] font-poppins"
+      >
         {header}
         <UploadForm
           onUploadImage={onUploadImage}
@@ -84,7 +91,7 @@ const HomeScreen = () => {
           percent={percent}
         />
         <ImageGallery imageList={documents} />
-      </div>
+      </motion.div>
     </>
   );
 };
