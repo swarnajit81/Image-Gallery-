@@ -14,7 +14,7 @@ const ImageGallery = ({ imageList }) => {
 
   return (
     <div className="mx-auto mt-[3rem]">
-      <div className=" xl:columns-3  lg:columns-2 columns-1">
+      <div className=" xl:columns-3 columns-2">
         {imageList &&
           imageList?.map((el, i) => (
             <motion.img
@@ -26,7 +26,7 @@ const ImageGallery = ({ imageList }) => {
               layout
               alt={el?.id}
               key={el?.id}
-              className="cursor-pointer hover:grayscale transition-all duration-300 p-5"
+              className="cursor-pointer object-cover w-full h-auto py-[10px] hover:grayscale transition-all duration-300"
               src={el?.data?.imageUrl}
             />
           ))}
