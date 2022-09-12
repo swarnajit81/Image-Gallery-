@@ -15,18 +15,18 @@ const UploadForm = ({ onUploadImage, percent, error, file }) => {
       >
         <AiOutlineUpload size={25} />
       </label>
-      {error && <p className="text-red-300 text-center pt-[1rem]"> {error} </p>}
+       <p className="text-red-300 text-center pt-[1rem]"> {error} </p>
 
-      {file && (
+      
         <p className="text-red-300 text-center pt-[1rem]">{file?.name}</p>
-      )}
+      
 
-      {file && (
+      
         <div
-          style={{ width: `${percent}%` }}
+          style={{ width: `${file ? percent : 0}%` }}
           className={`h-[2px] rounded-full bg-red-300 mt-[2rem] transition-all duration-300`}
         ></div>
-      )}
+      
     </form>
   );
 };
