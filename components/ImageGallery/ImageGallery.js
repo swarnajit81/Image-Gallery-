@@ -20,13 +20,13 @@ const ImageGallery = ({ imageList }) => {
             <motion.img
               onClick={() => onClickImage(el)}
               loading="lazy"
-              initial={{ y: 100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 1 }}
               layout
               alt={el?.id}
               key={el?.id}
-              className="cursor-pointer object-cover w-full h-auto py-[10px] hover:grayscale transition-all duration-300"
+              className="rounded-[30px] cursor-pointer borde object-cover w-full h-auto py-[10px] hover:grayscale transition-all duration-300"
               src={el?.data?.imageUrl}
             />
           ))}

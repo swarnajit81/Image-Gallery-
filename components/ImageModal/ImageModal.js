@@ -1,7 +1,17 @@
 import { AnimatePresence , motion} from 'framer-motion'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const ImageModal = ({isModal , setIsModal, picture}) => {
+
+
+  useEffect(() => {
+    if(isModal){
+      document.body.style.overflow = 'hidden'
+    }
+    else{
+      document.body.style.overflow = 'unset'
+    }
+  } , [isModal])
     
   return (
     <AnimatePresence>
